@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Layout from './components/Layout';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
 import AddProduct from './pages/AddProduct';
@@ -27,21 +28,49 @@ const ProtectedRoute = ({ children }) => {
   }
 
   if (!isAuthenticated) {
-    return <LoginPage />;
+    return <AuthPage />;
   }
 
   return children;
 };
 
-// Login Page Component
-const LoginPage = () => {
+// Authentication Page Component (Login/Register)
+const AuthPage = () => {
   const { login } = useAuth();
+  const [showRegister, setShowRegister] = useState(false);
 
   const handleLogin = () => {
     login();
   };
 
-  return <Login onLogin={handleLogin} />;
+  const handleRegister = () => {
+    // For demo purposes, we'll just switch back to login
+    setShowRegister(false);
+  };
+
+  const switchToRegister = () => {
+    setShowRegister(true);
+  };
+
+  const switchToLogin = () => {
+    setShowRegister(false);
+  };
+
+  if (showRegister) {
+    return (
+      <Register 
+        onRegister={handleRegister} 
+        onSwitchToLogin={switchToLogin}
+      />
+    );
+  }
+
+  return (
+    <Login 
+      onLogin={handleLogin} 
+      onSwitchToRegister={switchToRegister}
+    />
+  );
 };
 
 // Main App Content

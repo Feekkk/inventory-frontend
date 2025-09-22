@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Lock, Mail, Shield, AlertCircle } from 'lucide-react';
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin, onSwitchToRegister }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -201,6 +201,21 @@ const Login = ({ onLogin }) => {
                 'Sign In'
               )}
             </button>
+
+            {/* Switch to Register */}
+            <div className="text-center">
+              <p className="text-sm text-gray-600">
+                Don't have an account?{' '}
+                <button
+                  type="button"
+                  onClick={onSwitchToRegister}
+                  className="font-medium hover:text-blue-600 transition-colors"
+                  style={{ color: '#191970' }}
+                >
+                  Register here
+                </button>
+              </p>
+            </div>
           </form>
         </div>
 

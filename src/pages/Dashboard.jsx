@@ -73,9 +73,9 @@ const Dashboard = () => {
           <div className="p-6">
             <div className="space-y-4">
               {[
-                { name: 'Wireless Headphones', sku: 'WH-001', stock: 45, status: 'In Stock' },
-                { name: 'USB Cable', sku: 'UC-002', stock: 5, status: 'Low Stock' },
-                { name: 'Laptop Stand', sku: 'LS-003', stock: 12, status: 'In Stock' },
+                { name: 'ASUS Tuff Gaming', sku: 'WH-001', stock: 45, status: 'In Stock' },
+                { name: 'HP desktop', sku: 'UC-002', stock: 5, status: 'Low Stock' },
+                { name: 'Printer', sku: 'LS-003', stock: 12, status: 'In Stock' },
                 { name: 'Wireless Mouse', sku: 'WM-004', stock: 0, status: 'Out of Stock' },
               ].map((product, index) => (
                 <div key={index} className="flex items-center justify-between py-2">

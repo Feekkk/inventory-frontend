@@ -90,34 +90,6 @@ const History = () => {
         })}
       </div>
 
-      {/* Tabs */}
-      <div className="border-b border-gray-200">
-        <nav className="-mb-px flex space-x-8">
-          <button
-            onClick={() => setActiveTab('movements')}
-            className={`py-2 px-1 border-b-2 font-medium text-sm ${
-              activeTab === 'movements'
-                ? 'text-gray-900 border-gray-900'
-                : 'text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300'
-            }`}
-            style={activeTab === 'movements' ? { borderColor: '#191970', color: '#191970' } : {}}
-          >
-            Movement History
-          </button>
-          <button
-            onClick={() => setActiveTab('reports')}
-            className={`py-2 px-1 border-b-2 font-medium text-sm ${
-              activeTab === 'reports'
-                ? 'text-gray-900 border-gray-900'
-                : 'text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300'
-            }`}
-            style={activeTab === 'reports' ? { borderColor: '#191970', color: '#191970' } : {}}
-          >
-            Generated Reports
-          </button>
-        </nav>
-      </div>
-
       {/* Movement History Tab */}
       {activeTab === 'movements' && (
         <div className="bg-white rounded-lg shadow">
@@ -138,7 +110,7 @@ const History = () => {
                     Quantity
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    User
+                    Technician
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Date & Time
