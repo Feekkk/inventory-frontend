@@ -6,7 +6,6 @@ const Register = ({ onRegister, onSwitchToLogin }) => {
     fullName: '',
     email: '',
     phone: '',
-    department: '',
     password: '',
     confirmPassword: '',
     agreedToTerms: false
@@ -52,10 +51,6 @@ const Register = ({ onRegister, onSwitchToLogin }) => {
       newErrors.phone = 'Please enter a valid Malaysian phone number';
     }
     
-    if (!formData.department) {
-      newErrors.department = 'Department is required';
-    }
-    
     if (!formData.password) {
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 8) {
@@ -98,18 +93,6 @@ const Register = ({ onRegister, onSwitchToLogin }) => {
       setIsLoading(false);
     }, 1500);
   };
-
-  const departments = [
-    'Research Centre for Management & Policy',
-    'Information Technology',
-    'Human Resources',
-    'Finance & Accounting',
-    'Facilities Management',
-    'Academic Affairs',
-    'Student Affairs',
-    'Library Services',
-    'Other'
-  ];
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 py-8">
@@ -188,7 +171,7 @@ const Register = ({ onRegister, onSwitchToLogin }) => {
                     className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
                       errors.email ? 'border-red-300 bg-red-50' : 'border-gray-300'
                     }`}
-                    placeholder="your.email@unikl.edu.my"
+                    placeholder="email@unikl.edu.my"
                   />
                 </div>
                 {errors.email && (
@@ -222,35 +205,6 @@ const Register = ({ onRegister, onSwitchToLogin }) => {
                   <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
                 )}
               </div>
-            </div>
-
-            {/* Department Field */}
-            <div>
-              <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-2">
-                Department *
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Building className="h-5 w-5 text-gray-400" />
-                </div>
-                <select
-                  id="department"
-                  name="department"
-                  value={formData.department}
-                  onChange={handleInputChange}
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.department ? 'border-red-300 bg-red-50' : 'border-gray-300'
-                  }`}
-                >
-                  <option value="">Select your department</option>
-                  {departments.map((dept) => (
-                    <option key={dept} value={dept}>{dept}</option>
-                  ))}
-                </select>
-              </div>
-              {errors.department && (
-                <p className="mt-1 text-sm text-red-600">{errors.department}</p>
-              )}
             </div>
 
             {/* Password Fields Row */}
@@ -398,7 +352,7 @@ const Register = ({ onRegister, onSwitchToLogin }) => {
                   className="font-medium hover:text-blue-600 transition-colors"
                   style={{ color: '#191970' }}
                 >
-                  Sign in here
+                  Sign in
                 </button>
               </p>
             </div>
