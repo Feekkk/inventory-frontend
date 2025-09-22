@@ -23,7 +23,6 @@ const Products = () => {
           name: 'Wireless Headphones',
           sku: 'WH-001',
           category: 'Electronics',
-          price: 99.99,
           stock: 45,
           description: 'High-quality wireless headphones with noise cancellation',
           status: 'Active'
@@ -33,7 +32,6 @@ const Products = () => {
           name: 'USB Cable',
           sku: 'UC-002',
           category: 'Accessories',
-          price: 12.99,
           stock: 5,
           description: 'USB-C to USB-A cable, 6 feet length',
           status: 'Active'
@@ -43,7 +41,6 @@ const Products = () => {
           name: 'Laptop Stand',
           sku: 'LS-003',
           category: 'Accessories',
-          price: 49.99,
           stock: 12,
           description: 'Adjustable aluminum laptop stand',
           status: 'Active'
@@ -53,7 +50,6 @@ const Products = () => {
           name: 'Wireless Mouse',
           sku: 'WM-004',
           category: 'Electronics',
-          price: 29.99,
           stock: 0,
           description: 'Ergonomic wireless mouse with USB receiver',
           status: 'Active'
@@ -154,9 +150,6 @@ const Products = () => {
                     Category
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Price
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Stock
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -183,9 +176,6 @@ const Products = () => {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {product.category}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        ${product.price}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {product.stock}

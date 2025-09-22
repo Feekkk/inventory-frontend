@@ -42,7 +42,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
+        <h1 className="text-2xl font-bold text-gray-900">Technician Dashboard</h1>
         <p className="text-gray-600">Overview of your inventory system</p>
       </div>
 
@@ -61,20 +61,6 @@ const Dashboard = () => {
           icon={AlertTriangle}
           color="bg-red-500"
           change={-5}
-        />
-        <StatCard
-          title="Total Inventory Value"
-          value={`$${stats.totalValue.toLocaleString()}`}
-          icon={DollarSign}
-          color="bg-green-500"
-          change={8}
-        />
-        <StatCard
-          title="Recent Transactions"
-          value={stats.recentTransactions}
-          icon={TrendingUp}
-          color="bg-purple-500"
-          change={15}
         />
       </div>
 
