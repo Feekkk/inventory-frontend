@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Package, Plus, List, Calendar, Settings } from 'lucide-react';
+import { Home, Package, Plus, ClipboardList, Calendar, Settings, Trash2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -9,7 +9,8 @@ const Sidebar = () => {
     { name: 'Dashboard', href: '/', icon: Home },
     { name: 'Products', href: '/products', icon: Package },
     { name: 'Add Product', href: '/products/add', icon: Plus },
-    { name: 'Pickup', href: '/categories', icon: List },
+    { name: 'Handover', href: '/categories', icon: ClipboardList },
+    { name: 'Disposal', href: '/disposal', icon: Trash2 },
     { name: 'History', href: '/history', icon: Calendar },
     { name: 'Settings', href: '/settings', icon: Settings },
   ];

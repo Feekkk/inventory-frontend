@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Plus, Edit, Trash2, Eye } from 'lucide-react';
+import { Search, Plus, Edit, Trash2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Products = () => {
@@ -88,7 +88,8 @@ const Products = () => {
           </div>
           <Link
             to="/products/add"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center space-x-2"
+            className="text-white px-4 py-2 rounded-lg hover:opacity-90 flex items-center space-x-2 transition-opacity"
+            style={{ backgroundColor: '#191970' }}
           >
             <Plus className="w-4 h-4" />
             <span>Add Product</span>
@@ -106,7 +107,8 @@ const Products = () => {
                 <input
                   type="text"
                   placeholder="Search products by name or SKU..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                  style={{ focusRingColor: '#191970' }}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -114,7 +116,8 @@ const Products = () => {
             </div>
             <div className="sm:w-48">
               <select
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent"
+                style={{ focusRingColor: '#191970' }}
                 value={filterCategory}
                 onChange={(e) => setFilterCategory(e.target.value)}
               >
@@ -132,7 +135,7 @@ const Products = () => {
       <div className="bg-white rounded-lg shadow overflow-hidden">
         {loading ? (
           <div className="p-8 text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 mx-auto" style={{ borderColor: '#191970' }}></div>
             <p className="mt-2 text-gray-600">Loading products...</p>
           </div>
         ) : (
@@ -186,24 +189,19 @@ const Products = () => {
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <div className="flex space-x-2">
-                          <button
-                            className="text-blue-600 hover:text-blue-900"
-                            title="View"
-                          >
-                            <Eye className="w-4 h-4" />
-                          </button>
+                        <div className="flex space-x-3">
                           <Link
                             to={`/products/edit/${product.id}`}
-                            className="text-indigo-600 hover:text-indigo-900"
-                            title="Edit"
+                            className="hover:opacity-75 transition-opacity"
+                            style={{ color: '#191970' }}
+                            title="Edit Product"
                           >
                             <Edit className="w-4 h-4" />
                           </Link>
                           <button
                             onClick={() => handleDelete(product.id)}
-                            className="text-red-600 hover:text-red-900"
-                            title="Delete"
+                            className="text-red-600 hover:text-red-900 transition-colors"
+                            title="Delete Product"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>

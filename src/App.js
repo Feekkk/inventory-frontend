@@ -9,10 +9,11 @@ import Products from './pages/Products';
 import AddProduct from './pages/AddProduct';
 import EditProduct from './pages/EditProduct';
 import Categories from './pages/Categories';
+import Disposal from './pages/Disposal';
+import DisposalForm from './pages/DisposalForm';
 import History from './pages/History';
 import Settings from './pages/Settings';
 
-// Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
 
@@ -34,7 +35,6 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// Authentication Page Component (Login/Register)
 const AuthPage = () => {
   const { login } = useAuth();
   const [showRegister, setShowRegister] = useState(false);
@@ -44,7 +44,6 @@ const AuthPage = () => {
   };
 
   const handleRegister = () => {
-    // For demo purposes, we'll just switch back to login
     setShowRegister(false);
   };
 
@@ -73,7 +72,6 @@ const AuthPage = () => {
   );
 };
 
-// Main App Content
 const AppContent = () => {
   return (
     <Router>
@@ -84,6 +82,8 @@ const AppContent = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/products/add" element={<AddProduct />} />
             <Route path="/products/edit/:id" element={<EditProduct />} />
+            <Route path="/disposal" element={<Disposal />} />
+            <Route path="/disposal/form/:itemId" element={<DisposalForm />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/history" element={<History />} />
             <Route path="/settings" element={<Settings />} />

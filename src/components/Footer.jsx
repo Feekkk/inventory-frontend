@@ -21,7 +21,7 @@ const Footer = () => {
                 />
                 <div>
                   <h3 className="text-lg font-bold" style={{ color: '#191970' }}>
-                    UniKL Inventory System
+                    UniKL RCMP Inventory System
                   </h3>
                   <p className="text-sm text-gray-600">
                     Department of Information Technology
@@ -75,7 +75,6 @@ const Footer = () => {
               <ul className="space-y-2">
                 {[
                   { name: 'User Manual', icon: FileText },
-                  { name: 'Technical Support', icon: Shield },
                   { name: 'Privacy Policy', icon: Shield },
                   { name: 'Terms of Service', icon: FileText }
                 ].map((item) => (
@@ -101,7 +100,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="flex items-center space-x-2">
               <span className="text-sm text-gray-600">
-                © {currentYear} Universiti Kuala Lumpur. All rights reserved.
+                © {currentYear} UniKL Royal College of Medicine Perak (RCMP). All rights reserved.
               </span>
               <div className="flex items-center space-x-1 text-red-500">
               </div>

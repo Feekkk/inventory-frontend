@@ -16,7 +16,6 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
       ...prev,
       [name]: value
     }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -54,9 +53,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
 
     setIsLoading(true);
     
-    // Simulate API call delay
     setTimeout(() => {
-      // Hardcoded credentials check
       if (formData.email === 'admin@unikl.my' && formData.password === '123456') {
         setErrors({});
         onLogin(true);
@@ -82,7 +79,7 @@ const Login = ({ onLogin, onSwitchToRegister }) => {
               <Shield className="w-10 h-10 text-white" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">UniKL Inventory</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">UniKL Inventory Systems</h1>
           <p className="text-gray-600">Technician Portal</p>
           <p className="text-sm text-gray-500 mt-2">Please sign in to access the system</p>
         </div>
