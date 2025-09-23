@@ -11,6 +11,7 @@ import EditProduct from './pages/EditProduct';
 import Categories from './pages/Categories';
 import Disposal from './pages/Disposal';
 import DisposalForm from './pages/DisposalForm';
+import ReturnItem from './pages/ReturnItem';
 import History from './pages/History';
 import Settings from './pages/Settings';
 
@@ -85,6 +86,7 @@ const AppContent = () => {
             <Route path="/disposal" element={<Disposal />} />
             <Route path="/disposal/form/:itemId" element={<DisposalForm />} />
             <Route path="/categories" element={<Categories />} />
+            <Route path="/return" element={<ReturnItem />} />
             <Route path="/history" element={<History />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
